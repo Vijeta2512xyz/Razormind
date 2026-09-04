@@ -1,0 +1,38 @@
+[
+  {
+    "document_id": "bank_failure",
+    "title": "Bank Failure",
+    "source": "bank_failure.md",
+    "text": "# Bank Failure Runbook Use this runbook when failures are concentrated on one bank while other banks continue near baseline. Compare the affected bank's failure rate, latency, timeout count, HTTP status distribution, and retry rate against unaffected banks. Verify whether the pattern is isolated to one payment method or appears across methods. If one bank is strongly isolated, escalate to that bank or its processor and include the measured failure-rate lift and timestamps in the incident record."
+  },
+  {
+    "document_id": "gateway_failure",
+    "title": "Gateway Failure",
+    "source": "gateway_failure.md",
+    "text": "# Payment Gateway Failure Runbook Use this runbook when gateway or upstream HTTP 5xx errors increase across payment traffic. Examine HTTP 500, 502, 503, and 504 responses, gateway error codes, failure rate, timeout rate, and retry volume. If multiple payment methods or banks are affected at the same time, prioritize the shared payment gateway or upstream provider as the root-cause candidate."
+  },
+  {
+    "document_id": "latency_spike",
+    "title": "Latency Spike",
+    "source": "latency_spike.md",
+    "text": "# Latency Spike Runbook Use this runbook when p95 or mean payment latency rises across a broad portion of traffic. Compare latency by payment method, bank, and region. Check whether failure and timeout rates also rise. Investigate gateway queues, upstream latency, database saturation, and network conditions. A broad latency increase without a single isolated bank or method points toward shared infrastructure or gateway latency."
+  },
+  {
+    "document_id": "regional_degradation",
+    "title": "Regional Degradation",
+    "source": "regional_degradation.md",
+    "text": "# Regional Degradation Runbook Use this runbook when failures or latency increase sharply in one geographic region while other regions remain near baseline. Compare failure rate, timeout rate, latency, and HTTP errors by region. Check regional network, infrastructure, and gateway dependencies. Escalate the regional component when the evidence is geographically concentrated."
+  },
+  {
+    "document_id": "timeout_spike",
+    "title": "Timeout Spike",
+    "source": "timeout_spike.md",
+    "text": "# Timeout Spike Runbook Use this runbook when TIMEOUT errors or HTTP 408/504 responses rise and retries increase. Compare timeout rate and p95 latency with baseline. Determine whether timeouts are isolated to a payment method, bank, region, or shared gateway. Check upstream response time and network health. Preserve the timeout and retry evidence when escalating."
+  },
+  {
+    "document_id": "upi_degradation",
+    "title": "Upi Degradation",
+    "source": "upi_degradation.md",
+    "text": "# UPI Degradation Runbook Use this runbook when UPI success rate falls while card and other payment methods remain comparatively healthy. Check UPI gateway health, upstream response codes, timeout rate, retry rate, and regional concentration. Compare UPI metrics against the recent baseline. If the degradation is isolated to UPI, escalate to the UPI gateway or upstream provider and avoid blaming an individual bank unless bank-specific evidence is present. Preserve timestamps, error codes, and affected regions for the incident record."
+  }
+]
