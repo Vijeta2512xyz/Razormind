@@ -1,478 +1,1374 @@
-# RazorMind — AI-Powered Payment Reliability & Incident Intelligence
+# **RAZORMIND**
 
-RazorMind is an AI-powered payment reliability system that detects payment incidents, diagnoses likely root causes, quantifies revenue at risk, executes bounded recovery actions, measures recovered revenue, and generates grounded incident reports.
+## 
 
-It is designed around one principle:
+## \## AI-POWERED PAYMENT RELIABILITY \& INCIDENT INTELLIGENCE SYSTEM
 
-> **The LLM explains the incident — it does not decide whether an incident exists.**
 
----
 
-## 🚀 What RazorMind Does
+RazorMind is an AI-powered payment reliability and incident intelligence platform designed to detect payment failures, diagnose root causes, estimate financial impact, execute bounded recovery strategies, and generate grounded incident reports.
 
-RazorMind closes the loop from payment failure to measurable recovery:
+
+
+The system combines statistical anomaly detection, deterministic root-cause analysis, Retrieval-Augmented Generation (RAG), bounded recovery automation, and LLM-based incident analysis into a single end-to-end workflow.
+
+
+
+\---
+
+
+
+### **1. PROJECT OVERVIEW**
+
+
+
+#### \## 1.1 Problem Statement
+
+
+
+Payment systems can experience sudden increases in:
+
+
+
+\- Payment failures
+
+\- Transaction latency
+
+\- Timeouts
+
+\- Retries
+
+\- Processor errors
+
+\- Bank-specific failures
+
+\- Payment-method-specific failures
+
+
+
+Traditional monitoring systems can identify that something is wrong, but engineers often need to manually investigate the incident and determine:
+
+
+
+1\. What failed?
+
+2\. Which payment method or component is affected?
+
+3\. What is the likely root cause?
+
+4\. How much revenue is at risk?
+
+5\. Which recovery strategy should be applied?
+
+6\. How much revenue can be recovered?
+
+7\. What actions should the incident-response team take?
+
+
+
+RazorMind automates this workflow from detection through recovery and post-incident analysis.
+
+
+
+\---
+
+
+
+### **2. END-TO-END WORKFLOW**
+
+
 
 ```text
-Payment Transactions
-        ↓
-Incident Simulation
-        ↓
-Statistical Detection
-        ↓
-Incident Diagnosis / RCA
-        ↓
-Revenue at Risk
-        ↓
-Recovery Strategy
-        ↓
-Safety Checks
-        ↓
-Bounded Recovery Execution
-        ↓
-Recovery Evaluation
-        ↓
-RAG + LLM Incident Report
-🧠 Architecture
-                    ┌─────────────────────┐
-                    │ Payment Simulator   │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │ Incident Injector   │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │ Metrics Aggregation │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │ Anomaly Detection   │
-                    │ Rolling Baseline    │
-                    │ Z-Score / EWMA      │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │ Incident Diagnosis  │
-                    │ Evidence + RCA      │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │ Revenue Risk        │
-                    │ Quantification      │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │ Recovery Strategy   │
-                    │ Safety Constraints  │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │ Bounded Recovery    │
-                    │ Simulation          │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │ Recovery Evaluation │
-                    └──────────┬──────────┘
-                               ↓
-              ┌────────────────┴────────────────┐
-              ↓                                 ↓
-      ┌─────────────────┐              ┌─────────────────┐
-      │ RAG Runbooks    │              │ LLM Analyst     │
-      └─────────────────┘              └─────────────────┘
-                       \                /
-                        \              /
-                         ↓            ↓
-                    Incident Report
-🔍 Incident Detection
 
-RazorMind does not rely on an LLM to detect anomalies.
+PAYMENT SIMULATOR
 
-The detection layer operates on transaction-derived metrics and statistical baselines.
+&#x20;       |
 
-It monitors signals including:
+&#x20;       v
 
-Payment failure rate
+INCIDENT INJECTION
+
+&#x20;       |
+
+&#x20;       v
+
+METRICS AGGREGATION
+
+&#x20;       |
+
+&#x20;       v
+
+ANOMALY DETECTION
+
+&#x20;       |
+
+&#x20;       v
+
+INCIDENT CORRELATION
+
+&#x20;       |
+
+&#x20;       v
+
+ROOT-CAUSE DIAGNOSIS
+
+&#x20;       |
+
+&#x20;       v
+
+REVENUE AT RISK
+
+&#x20;       |
+
+&#x20;       v
+
+RECOVERY STRATEGY
+
+&#x20;       |
+
+&#x20;       v
+
+BOUNDED RECOVERY EXECUTION
+
+&#x20;       |
+
+&#x20;       v
+
+RECOVERY EVALUATION
+
+&#x20;       |
+
+&#x20;       v
+
+RAG RUNBOOK RETRIEVAL
+
+&#x20;       |
+
+&#x20;       v
+
+GROUNDED LLM INCIDENT REPORT
+
+
+
+### **3. SYSTEM ARCHITECTURE**
+
+&#x20;                        RAZORMIND
+
+&#x20;                            |
+
+&#x20;             +--------------+--------------+
+
+&#x20;             |                             |
+
+&#x20;             v                             v
+
+&#x20;     PAYMENT SIMULATOR              INCIDENT INJECTOR
+
+&#x20;             |                             |
+
+&#x20;             +--------------+--------------+
+
+&#x20;                            |
+
+&#x20;                            v
+
+&#x20;                    METRICS ENGINE
+
+&#x20;                            |
+
+&#x20;                            v
+
+&#x20;                   ANOMALY DETECTOR
+
+&#x20;                            |
+
+&#x20;                            v
+
+&#x20;                  INCIDENT CORRELATOR
+
+&#x20;                            |
+
+&#x20;                            v
+
+&#x20;                   ROOT-CAUSE ENGINE
+
+&#x20;                            |
+
+&#x20;               +------------+------------+
+
+&#x20;               |                         |
+
+&#x20;               v                         v
+
+&#x20;         REVENUE RISK               RAG RETRIEVER
+
+&#x20;               |                         |
+
+&#x20;               v                         v
+
+&#x20;       RECOVERY ENGINE             RUNBOOK CONTEXT
+
+&#x20;               |                         |
+
+&#x20;               +------------+------------+
+
+&#x20;                            |
+
+&#x20;                            v
+
+&#x20;                      LLM ANALYST
+
+&#x20;                            |
+
+&#x20;                            v
+
+&#x20;                   STREAMLIT DASHBOARD
+
+
+
+
+
+### **4. PAYMENT SIMULATION**
+
+
+
+RazorMind begins with a configurable payment transaction simulator.
+
+
+
+The simulator generates transaction-level data containing information such as:
+
+
+
+Transaction ID
+
+Timestamp
+
+Payment method
+
+Bank
+
+Transaction amount
+
+Transaction status
+
 Latency
-Timeout rate
-Retry behavior
-Payment method performance
-Bank performance
-Regional degradation
 
-The detection layer produces structured incident candidates that are passed to diagnosis.
+Retry count
 
-🧩 Root-Cause Diagnosis
 
-The diagnosis layer compares incident-window behavior against baseline behavior.
 
-It evaluates multiple hypotheses such as:
+The generated data provides a controlled environment for testing incident detection and recovery.
 
-Bank degradation
+
+
+### **5. INCIDENT INJECTION**
+
+
+
+The incident injector creates realistic payment incidents on top of the simulated transaction data.
+
+
+
+Supported incident behavior includes conditions such as:
+
+
+
+Increased failure rate
+
+Increased latency
+
+Increased timeout rate
+
+Increased retries
+
 Payment-method degradation
-Gateway failure
-Regional degradation
-Latency spike
-Timeout spike
 
-The leading hypothesis is selected deterministically from the evidence.
+Bank-specific degradation
+
+
+
+Each incident contains structured metadata such as:
+
+
+
+Incident ID
+
+Incident Type
+
+Start Time
+
+End Time
+
+Severity
+
+Affected Component
+
+Affected Payment Method
+
+Expected Symptoms
+
+
+
+This allows the detection and diagnosis systems to be evaluated against known ground truth.
+
+
+
+### **6. METRICS \& MONITORING**
+
+
+
+RazorMind aggregates transaction-level data into operational payment metrics.
+
+
+
+The monitoring layer tracks:
+
+
+
+Transaction volume
+
+Success rate
+
+Failure rate
+
+Mean latency
+
+P95 latency
+
+Retry rate
+
+Timeout rate
+
+Payment-method performance
+
+Bank performance
+
+
+
+These metrics form the input to the anomaly-detection pipeline.
+
+
+
+### **7. ANOMALY DETECTION**
+
+
+
+RazorMind does not use an LLM as the primary incident detector.
+
+
+
+Detection is based on structured payment metrics and statistical signals.
+
+
+
+The detection layer supports techniques such as:
+
+
+
+Rolling baselines
+
+Z-score based anomaly detection
+
+EWMA-style monitoring
+
+
+
+The detector identifies abnormal behavior while keeping the detection process deterministic and reproducible.
+
+
+
+### **8. INCIDENT CORRELATION**
+
+
+
+Multiple anomalous signals may appear simultaneously during a payment incident.
+
+
+
+RazorMind correlates these signals to determine whether they belong to the same incident.
+
+
+
+The correlation layer considers:
+
+
+
+Time windows
+
+Payment methods
+
+Banks
+
+Failure behavior
+
+Latency behavior
+
+Timeout behavior
+
+Retry behavior
+
+
+
+This produces a structured incident representation for downstream diagnosis.
+
+
+
+### **9. ROOT-CAUSE DIAGNOSIS**
+
+
+
+After detecting an incident, RazorMind extracts structured evidence from the affected incident window.
+
+
+
+The diagnosis engine evaluates multiple root-cause dimensions:
+
+
+
+Payment method
+
+Bank
+
+Processor
+
+Failure rate
+
+Timeout rate
+
+Latency
+
+Retry behavior
+
+
+
+Root-cause candidates are scored using observed evidence rather than generated explanations.
+
+
 
 For example:
 
-Incident: INC-UPI-001
 
-Leading hypothesis:
-payment_method:upi
 
-Reason:
-Payment method upi has the highest failure-rate lift
-versus the incident window overall.
+Leading Root Cause:
 
-This deterministic diagnosis becomes authoritative input to the LLM.
+payment\_method:upi
 
-📚 RAG Runbook Retrieval
 
-RazorMind includes a lightweight retrieval layer over operational runbooks.
 
-Example knowledge-base documents include:
+This allows the LLM to explain the diagnosis instead of inventing the diagnosis.
 
-bank_failure.md
-gateway_failure.md
-latency_spike.md
-regional_degradation.md
-timeout_spike.md
-upi_degradation.md
 
-The retriever uses vector-style similarity to identify runbooks relevant to the diagnosed incident.
 
-The retrieved operational knowledge is then supplied to the incident analyst.
+### **10. RETRIEVAL-AUGMENTED GENERATION**
 
-💰 Revenue-at-Risk Quantification
 
-RazorMind connects technical incidents to business impact.
 
-For a detected incident, the system calculates:
+RazorMind includes a lightweight Retrieval-Augmented Generation pipeline for incident-response knowledge.
 
-Revenue at Risk
-        ↓
-Eligible Recovery Revenue
-        ↓
-Revenue Recovered
-        ↓
-Remaining Revenue Risk
 
-This makes the incident measurable from both an engineering and financial perspective.
 
-⚙️ Bounded Recovery
+#### 10.1 RAG Pipeline
 
-RazorMind does not blindly retry every failed transaction.
+RUNBOOKS
 
-Every candidate transaction must pass deterministic safety constraints.
+&#x20;   |
 
-Examples:
+&#x20;   v
 
-Transaction must fall inside the incident window
-Transaction must have failed
-Transaction must belong to the affected payment method/bank
-Retry count must remain below the configured maximum
-Transaction amount must remain below the configured maximum
+DOCUMENT PROCESSING
 
-Each candidate produces an audit record.
+&#x20;   |
 
-Failed Transaction
-       ↓
-Safety Rules
-   ↙       ↘
-PASS       REJECT
- ↓           ↓
-Retry       Stop
+&#x20;   v
 
-The recovery executor is intentionally a simulation and does not call a real payment provider.
+SEARCHABLE REPRESENTATION
 
-📊 Recovery Evaluation
+&#x20;   |
 
-After bounded recovery execution, RazorMind measures:
+&#x20;   v
+
+SIMILARITY RETRIEVAL
+
+&#x20;   |
+
+&#x20;   v
+
+RELEVANT RUNBOOKS
+
+&#x20;   |
+
+&#x20;   v
+
+LLM INCIDENT ANALYSIS
+
+
+
+#### 10.2 Retrieval
+
+
+
+The retrieval system searches the incident knowledge base and returns runbooks relevant to the diagnosed incident.
+
+
+
+Example runbook categories include:
+
+
+
+UPI degradation
+
+Bank failures
+
+Processor failures
+
+Payment gateway issues
+
+Increased latency
+
+Elevated timeout rates
+
+
+
+The retrieved information provides operational context for the final incident analysis.
+
+
+
+### **11. REVENUE AT RISK**
+
+
+
+RazorMind goes beyond detecting technical failures.
+
+
+
+It estimates the financial impact of an incident.
+
+
+
+Revenue at risk is calculated from failed transactions inside the affected incident window.
+
+
+
+REVENUE AT RISK
+
+=
+
+SUM OF FAILED TRANSACTION AMOUNTS
+
+
+
+The calculation can be restricted to:
+
+
+
+Affected payment method
+
+Affected bank
+
+Incident time window
+
+
+
+This converts an operational incident into a measurable business-impact signal.
+
+
+
+### **12. RECOVERY STRATEGY**
+
+
+
+RazorMind determines which failed transactions are eligible for bounded recovery.
+
+
+
+The strategy layer applies explicit safety rules before a transaction can be retried.
+
+
+
+FAILED TRANSACTION
+
+&#x20;       |
+
+&#x20;       v
+
+SAFETY CHECKS
+
+&#x20;       |
+
+&#x20;       +---- RETRY LIMIT EXCEEDED ----> REJECT
+
+&#x20;       |
+
+&#x20;       +---- AMOUNT LIMIT EXCEEDED ---> REJECT
+
+&#x20;       |
+
+&#x20;       v
+
+BOUNDED RETRY
+
+
+
+Safety constraints include:
+
+
+
+Incident-window filtering
+
+Payment-method filtering
+
+Bank filtering
+
+Maximum retry count
+
+Maximum transaction amount
+
+
+
+Each candidate transaction receives an audit record explaining whether it was approved or rejected.
+
+### 
+
+### **13. BOUNDED RECOVERY EXECUTION**
+
+
+
+Approved transactions are passed to the recovery executor.
+
+
+
+Recovery is intentionally simulated and bounded.
+
+
+
+The executor:
+
+
+
+Receives eligible transactions.
+
+Performs one simulated recovery attempt per transaction.
+
+Uses a configurable recovery probability.
+
+Produces recovered transaction and revenue totals.
+
+Records the recovery outcome.
+
+
+
+The system does not call a real payment provider or perform unrestricted financial transactions.
+
+
+
+### **14. RECOVERY EVALUATION**
+
+
+
+After execution, RazorMind evaluates the recovery outcome.
+
+
+
+The evaluation layer calculates:
+
+
 
 Revenue recovered
-Remaining revenue risk
+
+Remaining revenue at risk
+
 Revenue recovery rate
+
 Eligible recovery rate
+
 Transaction recovery rate
+
 Number of recovered transactions
-Number of rejected transactions
 
-This creates a measurable before/after recovery view.
+Number of failed transactions
 
-🤖 Grounded LLM Incident Analyst
 
-The LLM is used for explanation rather than detection.
 
-The analyst receives:
+This creates a measurable before-and-after view of the incident.
 
-Deterministic Diagnosis
-        +
-Retrieved Runbooks
-        +
-Actual Recovery Outcome
-        ↓
-Grounded Incident Report
 
-The report contains:
 
-Summary
+### **15. LLM INCIDENT ANALYST**
+
+
+
+The LLM operates as an explanation and reasoning layer.
+
+
+
+It receives structured information including:
+
+
+
+Incident diagnosis
+
+Root-cause evidence
+
+Retrieved runbooks
+
+Revenue-at-risk information
+
+Recovery strategy
+
+Recovery outcome
+
+
+
+The LLM generates a structured incident report containing:
+
+
+
+Incident summary
+
 Severity
+
 Likely root cause
+
 Affected components
-Evidence
+
+Supporting evidence
+
 Recommended actions
+
 Confidence
 
-The system explicitly prevents the LLM from replacing the deterministic root-cause diagnosis or inventing recovery outcomes.
 
-🧪 Example Incident
-INC-UPI-001
 
-A simulated UPI degradation was injected into the transaction stream.
+The system is designed so that the LLM does not independently determine the primary incident.
 
-Incident type:
-upi_degradation
 
-Severity:
-high
 
-Affected component:
-payment_method:upi
-Financial impact
-Revenue at risk:
-₹437,676.16
+### **16. EXAMPLE INCIDENT**
 
-Eligible recovery revenue:
-₹275,283.98
+#### 16.1 Incident Details
 
-Revenue recovered:
-₹202,829.76
+Incident ID: INC-UPI-001
 
-Remaining risk:
-₹234,846.40
-Recovery
+Incident Type: UPI Degradation
+
+Severity: High
+
+Affected Component: UPI
+
+Incident Window: 01:00 - 01:30
+
+### 16.2 Diagnosis
+
+Leading Root Cause:
+
+payment\_method:upi
+
+### 16.3 Financial Impact
+
+Revenue At Risk:       INR 437,676.16
+
+Eligible Revenue:      INR 275,283.98
+
+Revenue Recovered:     INR 202,829.76
+
+Remaining Risk:        INR 234,846.40
+
+### 16.4 Transaction Impact
+
+Failed Transactions:   350
+
+Recovered Transactions: 149
+
+### 16.5 Recovery Configuration
+
 Strategy:
-bounded_retry
 
-Recovered transactions:
-149
+bounded\_retry
 
-Failed transactions in incident:
-350
 
-The final report is generated from the actual deterministic recovery outcome rather than hypothetical LLM-generated values.
 
-🛡️ Safety by Design
+Maximum Retries:
 
-RazorMind treats automated recovery as a bounded decision problem.
+2
 
-The system includes:
 
-Maximum retry limits
-Maximum transaction amount
-Incident-window restrictions
-Payment-method/bank restrictions
-Candidate-level safety decisions
-Audit trail
-Deterministic recovery evaluation
-Simulated execution instead of real payment execution
 
-This allows recovery logic to be evaluated without interacting with real financial infrastructure.
+Maximum Transaction Amount:
 
-📈 Evaluation
+INR 10,000
 
-RazorMind includes automated evaluation for multiple layers of the system.
 
-Detection
+
+
+
+### **17. SAFETY \& CONTROL**
+
+
+
+RazorMind follows a bounded automation approach.
+
+
+
+The recovery system does not automatically perform unrestricted financial actions.
+
+
+
+Recovery is constrained by:
+
+
+
+INCIDENT WINDOW
+
+AFFECTED PAYMENT METHOD
+
+AFFECTED BANK
+
+MAXIMUM RETRIES
+
+MAXIMUM TRANSACTION AMOUNT
+
+AUDIT TRAIL
+
+
+
+Each recovery candidate is explicitly classified as:
+
+
+
+APPROVED
+
+
+
+or:
+
+
+
+REJECTED
+
+
+
+with a corresponding reason.
+
+
+
+This provides traceability and makes the recovery process auditable.
+
+
+
+### **18. EVALUATION FRAMEWORK**
+
+
+
+RazorMind includes automated evaluation across the major pipeline components.
+
+
+
+#### 18.1 Detection Evaluation
+
+
+
+Metrics include:
+
+
+
 Precision
+
 Recall
-F1
+
+F1 Score
+
 Confusion counts
+
 Incident hit rate
+
 Detection delay
-Diagnosis
+
+
+
+#### 18.2 Diagnosis Evaluation
+
+
+
+Metrics include:
+
+
+
 Root-cause accuracy
+
 Component accuracy
-RAG
-Hit rate
-Mean Reciprocal Rank (MRR)
-LLM
+
+
+
+#### 18.3 RAG Evaluation
+
+
+
+Metrics include:
+
+
+
+Retrieval hit rate
+
+Mean Reciprocal Rank
+
+
+
+#### 18.4 LLM Evaluation
+
+
+
+Metrics include:
+
+
+
 Structured-output validity
+
 Basic grounding checks
-Recovery
+
+
+
+#### 18.5 Recovery Evaluation
+
+
+
+Metrics include:
+
+
+
 Revenue recovered
-Remaining risk
+
+Remaining revenue risk
+
 Revenue recovery rate
+
 Transaction recovery rate
-Eligible recovery rate
-🧪 Testing
 
-The project currently contains 86 automated tests covering:
 
-Transaction generation
-Incident injection
-Metrics
-Detection
-Diagnosis
-RAG
-LLM analyst
-Evaluation
-Revenue-risk calculation
+
+
+
+### **19. STREAMLIT DASHBOARD**
+
+
+
+RazorMind includes an interactive Streamlit dashboard for incident investigation.
+
+
+
+The dashboard provides visibility into:
+
+
+
+Incident details
+
+Detection results
+
+Root-cause diagnosis
+
+Evidence
+
+Revenue at risk
+
 Recovery strategy
-Recovery execution
-Recovery evaluation
-End-to-end recovery pipeline
-Dashboard behavior
+
+Recovery results
+
+Before-and-after impact
+
+Retrieved runbooks
+
+LLM incident analysis
+
+
+
+
+
+### **20. TESTING**
+
+
+
+The project includes automated tests covering the major components of the system.
+
+
+
+Current test suite:
+
+
+
+86 TESTS PASSED
+
+
 
 Run the complete test suite:
 
-pytest -q
 
-Expected result:
 
-86 passed
-🖥️ Dashboard
+python -m pytest -q
 
-RazorMind includes a Streamlit dashboard for interactive incident analysis.
 
-The dashboard provides:
 
-Incident selection
-Detection results
-Root-cause diagnosis
-Evidence
-Retrieved runbooks
-Revenue-at-risk analysis
-Recovery strategy
-Recovery execution results
-Recovery evaluation
-Grounded LLM incident report
-🛠️ Tech Stack
+
+
+### **21. TECHNOLOGY STACK**
+
+#### 21.1 Programming \& Data
+
 Python
-Pandas
-NumPy
-SQLite
-Streamlit
-Scikit-learn
-TF-IDF / cosine similarity
-Ollama
-Pytest
-📁 Project Structure
-razormind/
-│
-├── app/
-│   ├── simulator/
-│   │   ├── generator.py
-│   │   ├── incidents.py
-│   │   └── schema.sql
-│   │
-│   ├── detection/
-│   │   ├── metrics.py
-│   │   ├── baseline.py
-│   │   └── detector.py
-│   │
-│   ├── diagnosis/
-│   │   ├── evidence.py
-│   │   └── root_cause.py
-│   │
-│   ├── rag/
-│   │   ├── ingest.py
-│   │   ├── retriever.py
-│   │   └── knowledge_base/
-│   │
-│   ├── llm/
-│   │   └── analyst.py
-│   │
-│   ├── recovery/
-│   │   ├── revenue.py
-│   │   ├── strategy.py
-│   │   ├── executor.py
-│   │   ├── evaluator.py
-│   │   └── pipeline.py
-│   │
-│   ├── evaluation/
-│   │   ├── detection_metrics.py
-│   │   ├── diagnosis_metrics.py
-│   │   └── evaluation_runner.py
-│   │
-│   └── dashboard.py
-│
-├── data/
-├── notebooks/
-├── tests/
-├── requirements.txt
-├── README.md
-└── .gitignore
-▶️ Running RazorMind
 
-Clone the repository and enter the project directory:
+Pandas
+
+NumPy
+
+SQLite
+
+#### 21.2 Machine Learning \& Retrieval
+
+Scikit-learn
+
+TF-IDF retrieval
+
+Cosine similarity
+
+Statistical anomaly detection
+
+#### 21.3 Generative AI
+
+Ollama
+
+Local LLM inference
+
+Retrieval-Augmented Generation
+
+#### 21.4 Dashboard
+
+Streamlit
+
+#### 21.5 Testing
+
+Pytest
+
+
+
+### **22. PROJECT STRUCTURE**
+
+razormind/
+
+|
+
++-- app/
+
+|   |
+
+|   +-- simulator/
+
+|   |   +-- generator.py
+
+|   |   +-- incidents.py
+
+|   |   +-- schema.sql
+
+|   |
+
+|   +-- detection/
+
+|   |   +-- metrics.py
+
+|   |   +-- baseline.py
+
+|   |   +-- detector.py
+
+|   |
+
+|   +-- diagnosis/
+
+|   |   +-- evidence.py
+
+|   |   +-- root\_cause.py
+
+|   |
+
+|   +-- rag/
+
+|   |   +-- ingest.py
+
+|   |   +-- retriever.py
+
+|   |   +-- knowledge\_base/
+
+|   |
+
+|   +-- llm/
+
+|   |   +-- analyst.py
+
+|   |
+
+|   +-- evaluation/
+
+|   |   +-- detection\_metrics.py
+
+|   |   +-- diagnosis\_metrics.py
+
+|   |   +-- evaluation\_runner.py
+
+|   |
+
+|   +-- recovery/
+
+|       +-- revenue.py
+
+|       +-- strategy.py
+
+|       +-- executor.py
+
+|       +-- evaluator.py
+
+|       +-- pipeline.py
+
+|
+
++-- data/
+
+|   +-- raw/
+
+|   +-- processed/
+
+|
+
++-- models/
+
+|
+
++-- notebooks/
+
+|
+
++-- tests/
+
+|   +-- test\_generator.py
+
+|   +-- test\_incidents.py
+
+|   +-- test\_detection.py
+
+|   +-- test\_diagnosis.py
+
+|
+
++-- requirements.txt
+
++-- README.md
+
++-- .gitignore
+
+
+
+
+
+### **23. RUNNING THE PROJECT**
+
+#### 23.1 Clone the Repository
 
 git clone https://github.com/Vijeta2512xyz/Razormind.git
+
 cd Razormind
 
-Create a virtual environment:
-
-python -m venv .venv
-
-Activate it on Windows:
-
-.venv\Scripts\Activate.ps1
-
-Install dependencies:
+#### 23.2 Install Dependencies
 
 pip install -r requirements.txt
 
-Run the tests:
+#### 23.3 Run Tests
 
-pytest -q
+python -m pytest -q
 
-Launch the dashboard:
+#### 23.4 Run the Dashboard
+
+streamlit run app/dashboard.py
+
+#### 23.5 Run with Local Ollama Model
 
 $env:PYTHONPATH=(Get-Location).Path
+
+$env:RAZORMIND\_OLLAMA\_MODEL="phi:latest"
+
 streamlit run app/dashboard.py
 
-For local LLM reporting with Ollama:
 
-$env:RAZORMIND_OLLAMA_MODEL="phi:latest"
-streamlit run app/dashboard.py
-🔐 Data & Safety
 
-RazorMind uses simulated payment data.
 
-No real payment transactions are executed.
 
-The recovery executor is intentionally bounded and simulated for experimentation and evaluation.
+### **24. DESIGN PHILOSOPHY**
 
-Database files, environment variables, model artifacts, and other local-only files are excluded through .gitignore.
 
-🎯 Design Philosophy
 
-RazorMind follows a simple architecture:
+The central design principle of RazorMind is:
 
-Deterministic systems establish what happened. AI explains why it matters.
 
-This separation makes the system more auditable, testable, and safer than using an LLM as the primary incident detector or recovery decision-maker.
 
-🚀 Future Work
+LLM FOR REASONING AND EXPLANATION
 
-Potential extensions include:
 
-Real-time streaming transaction ingestion
-Production-grade vector databases
+
+NOT
+
+
+
+LLM FOR BASIC MONITORING
+
+
+
+The system separates deterministic operational logic from generative AI.
+
+
+
+RAW TRANSACTION DATA
+
+&#x20;       |
+
+&#x20;       v
+
+DETERMINISTIC METRICS
+
+&#x20;       |
+
+&#x20;       v
+
+STATISTICAL DETECTION
+
+&#x20;       |
+
+&#x20;       v
+
+STRUCTURED DIAGNOSIS
+
+&#x20;       |
+
+&#x20;       v
+
+REVENUE IMPACT
+
+&#x20;       |
+
+&#x20;       v
+
+BOUNDED RECOVERY
+
+&#x20;       |
+
+&#x20;       v
+
+RAG CONTEXT
+
+&#x20;       |
+
+&#x20;       v
+
+LLM EXPLANATION
+
+
+
+This architecture improves:
+
+
+
+Reliability
+
+Reproducibility
+
+Explainability
+
+Testability
+
+Grounding
+
+Safety
+
+
+
+
+
+### **25. FUTURE WORK**
+
+
+
+Potential future improvements include:
+
+
+
+Real-time payment event streaming
+
+Production payment gateway integrations
+
 More advanced anomaly detection
-Multi-gateway routing optimization
-Human-in-the-loop recovery approval
-Real payment-provider sandbox integration
-Historical incident learning
-Recovery-policy optimization
-Production observability integration
-👩‍💻 Author
 
-Vijeta Vadehi Bandha
+Learned root-cause ranking
 
-Built as an AI-powered payment reliability and incident intelligence project for the Razorpay AI Buildathon 2026.
+Hybrid sparse and dense retrieval
+
+Historical incident similarity search
+
+Automated incident timelines
+
+Human approval workflows for recovery
+
+Multi-incident correlation
+
+Distributed observability integration
+
+Production-grade monitoring and alerting
+
+
+
+
+
+### **26. BUILDATHON**
+
+
+
+RazorMind was developed for the:
+
+
+
+RAZORPAY AI BUILDATHON 2026
+
+
+
+The project focuses on applying AI to:
+
+
+
+Payment reliability
+
+Incident intelligence
+
+Root-cause diagnosis
+
+Financial impact analysis
+
+Retrieval-Augmented Generation
+
+Bounded operational recovery
+
+
+
+
+
+### **27. AUTHOR**
+
+
+
+VIJETA VADEHI BANDHA
+
+
+
+AI \& MACHINE LEARNING ENGINEERING
+
+
+
+RAZORMIND
+
+
+
+Razorpay AI Buildathon 2026
 
