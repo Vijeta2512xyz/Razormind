@@ -10,7 +10,7 @@ Built for the **Razorpay AI Buildathon 2026**.
 
 ---
 
-## 🚨 The Problem
+##  The Problem
 
 Payment failures are not just engineering problems.
 
@@ -31,7 +31,7 @@ RazorMind goes further:
 
 ---
 
-# 💡 What RazorMind Does
+#  What RazorMind Does
 
 RazorMind processes transaction-level payment data through a complete incident-response pipeline:
 
@@ -67,7 +67,7 @@ The LLM is **not responsible for detecting incidents or deciding the root cause*
 
 ---
 
-# 💰 Demonstration Result
+#  Demonstration Result
 
 For the demonstrated **UPI degradation incident**, RazorMind produced the following recovery outcome:
 
@@ -106,7 +106,7 @@ Every candidate receives an audit record explaining whether recovery was approve
 
 ---
 
-# 🧠 Why Deterministic Detection + AI?
+#  Why Deterministic Detection + AI?
 
 RazorMind deliberately separates **control** from **reasoning**.
 
@@ -139,7 +139,7 @@ This makes the system more:
 
 ---
 
-# 🏗️ System Architecture
+#  System Architecture
 
 ```text
                     ┌─────────────────────┐
@@ -189,7 +189,7 @@ This makes the system more:
 
 ---
 
-# 🔄 End-to-End Incident Flow
+#  End-to-End Incident Flow
 
 ## 1. Payment Simulation
 
@@ -239,7 +239,7 @@ This allows the system to evaluate whether the detection pipeline correctly iden
 
 ---
 
-# 📊 Metrics & Detection
+#  Metrics & Detection
 
 RazorMind aggregates transaction-level data into operational metrics including:
 
@@ -268,7 +268,7 @@ This keeps incident detection reproducible and auditable.
 
 ---
 
-# 🔍 Incident Correlation
+#  Incident Correlation
 
 Once anomalous behavior is detected, RazorMind correlates signals across:
 
@@ -289,7 +289,7 @@ The goal is to determine whether the degradation is:
 
 ---
 
-# 🎯 Deterministic Root-Cause Diagnosis
+#  Deterministic Root-Cause Diagnosis
 
 RazorMind extracts structured evidence from the incident window.
 
@@ -319,7 +319,7 @@ The LLM receives this diagnosis as authoritative context and is explicitly preve
 
 ---
 
-# 💰 Revenue at Risk
+#  Revenue at Risk
 
 Technical incident metrics do not fully describe the business impact.
 
@@ -350,7 +350,7 @@ This connects operational reliability directly to financial impact.
 
 ---
 
-# ⚙️ Bounded Recovery
+#  Bounded Recovery
 
 RazorMind includes a controlled recovery engine for eligible failed transactions.
 
@@ -390,7 +390,7 @@ Recovery strategy: bounded_retry
 
 ---
 
-# 🛡️ Auditability & Safety
+#  Auditability & Safety
 
 Every recovery candidate receives an audit record.
 
@@ -413,7 +413,7 @@ RazorMind therefore demonstrates **bounded automation rather than unrestricted f
 
 ---
 
-# 📈 Recovery Evaluation
+#  Recovery Evaluation
 
 After the simulated recovery run, RazorMind evaluates:
 
@@ -429,7 +429,7 @@ This creates a measurable **before vs after** view of incident impact.
 
 ---
 
-# 📚 RAG Runbook Retrieval
+#  RAG Runbook Retrieval
 
 RazorMind uses Retrieval-Augmented Generation to provide operational context to the incident analyst.
 
@@ -464,7 +464,7 @@ This keeps the RAG pipeline transparent and easy to evaluate.
 
 ---
 
-# 🤖 Grounded LLM Incident Analyst
+#  Grounded LLM Incident Analyst
 
 The LLM receives:
 
@@ -499,7 +499,7 @@ It is not allowed to:
 
 ---
 
-# 🖥️ Dashboard
+#  Dashboard
 
 The Streamlit dashboard provides a complete incident-response view including:
 
@@ -536,7 +536,7 @@ The Streamlit dashboard provides a complete incident-response view including:
 
 ---
 
-# 🧪 Evaluation
+#  Evaluation
 
 RazorMind includes automated tests covering the major system components.
 
@@ -590,7 +590,7 @@ The evaluation framework covers areas including:
 
 ---
 
-# 📁 Project Structure
+#  Project Structure
 
 ```text
 razormind/
@@ -663,7 +663,7 @@ razormind/
 
 ---
 
-# 🛠️ Tech Stack
+#  Tech Stack
 
 ### Core
 
@@ -697,7 +697,7 @@ razormind/
 
 ---
 
-# 🚀 Getting Started
+#  Getting Started
 
 ## 1. Clone the repository
 
@@ -732,7 +732,7 @@ streamlit run app/dashboard.py
 
 ---
 
-# 🤖 Optional Local LLM Setup
+#  Optional Local LLM Setup
 
 RazorMind can use Ollama for local incident reporting.
 
@@ -752,7 +752,7 @@ The deterministic detection, diagnosis, recovery and evaluation pipeline does no
 
 ---
 
-# 🔐 Safety & Production Considerations
+#  Safety & Production Considerations
 
 The current recovery engine is intentionally simulated.
 
@@ -778,7 +778,7 @@ A production implementation would require additional controls such as:
 
 ---
 
-# 🔮 Future Work
+#  Future Work
 
 Potential extensions include:
 
@@ -796,7 +796,7 @@ Potential extensions include:
 
 ---
 
-# 🏆 Razorpay AI Buildathon 2026
+#  Razorpay AI Buildathon 2026
 
 RazorMind was built for the **Razorpay AI Buildathon 2026** around the problem of payment reliability and incident intelligence.
 
@@ -817,7 +817,7 @@ The central design idea is simple:
 
 ---
 
-# 👩‍💻 Author
+#  Author
 
 **Vijeta Vadehi Bandha**
 
